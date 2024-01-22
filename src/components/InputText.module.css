@@ -1,0 +1,16 @@
+.input_container{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.input_container label{
+    margin-bottom: .3em;
+    color: #bbb;
+}
+
+.input_container input{
+    width: 100%;
+    outline: none;
+    padding: .5em;
+}

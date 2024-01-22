@@ -1,0 +1,20 @@
+.item_container{
+    width: 100%;
+    padding: .6em 1em;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5em;
+    background-color: white;
+}
+
+.item_container h1{
+    font-size: 1.4em;
+    color: #1C1F33;
+}
+
+.item_container li{
+    list-style: none;
+}

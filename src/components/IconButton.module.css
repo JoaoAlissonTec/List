@@ -1,0 +1,16 @@
+.icon_button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.icon_item svg{
+    font-size: 1.4em;
+    color: #bbb;
+    transition: .2s;
+    margin-left: .3em;
+}
+
+.icon_item:hover > svg{
+    color: black;
+}

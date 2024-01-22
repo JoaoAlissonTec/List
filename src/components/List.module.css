@@ -1,0 +1,22 @@
+.list_container{
+    margin-top: 1em;
+    max-height: 70%;
+    overflow: auto;
+    padding: 1em;
+}
+
+.list_container p{
+    color: #bbb;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #1C1F33;
+    border-radius: 5px;
+}
