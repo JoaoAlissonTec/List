@@ -1,0 +1,35 @@
+.float_button_container{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.float_button_container span{
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    top: -5px;
+    left: -5px;
+}
+
+.float_button_container button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: #1C1F32;
+    padding: 1em;
+    cursor: pointer;
+    
+}
+
+.float_button_container button svg{
+    color: white;
+    font-size: 1.5em;
+}

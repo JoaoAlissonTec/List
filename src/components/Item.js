@@ -3,7 +3,7 @@ import {MdFavoriteBorder, MdFavorite, MdDeleteOutline} from 'react-icons/md'
 import { useState } from 'react';
 import IconButton from './IconButton';
 
-export default function Item({title, id, handleDelete}){
+export default function Item({title, id, quantity, handleDelete}){
     const [status, setStatus] = useState(false)
 
     function handleFavorite(){
@@ -16,7 +16,7 @@ export default function Item({title, id, handleDelete}){
 
     return(
         <li className={styles.item_container}>
-            <h1>{title}</h1>
+            <h1>{quantity} x {title}</h1>
             <div>
                 <IconButton onClick={()=>handleDelete(id)} icon={<MdDeleteOutline/>} type="icon_item"/>
                 <IconButton onClick={handleFavorite} icon={status?<MdFavorite color='red'/>:<MdFavoriteBorder/>} type="icon_item"/>
