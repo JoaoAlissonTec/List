@@ -1,42 +1,41 @@
 import './App.css';
 import { useState } from 'react';
 import InputText from './components/InputText';
-import Button from './components/Button';
-import List from './components/List';
 import Message from './components/Message';
 import FloatButton from './components/FloatButton';
 import {MdShoppingCart} from 'react-icons/md'
 import Cart from './components/Cart';
+import List from './components/List';
 
 function App() {
 
+  const produtos = [
+    {"id":0, "name":"Produto 1", "price":14.99, "image":"https://placehold.co/150"},
+    {"id":1, "name":"Produto 2", "price":20.49, "image":"https://placehold.co/150"},
+    {"id":2, "name":"Produto 3", "price":0.99, "image":"https://placehold.co/150"},
+    {"id":3, "name":"Produto 4", "price":4.49, "image":"https://placehold.co/150"},
+    {"id":4, "name":"Produto 5", "price":3.15, "image":"https://placehold.co/150"},
+    {"id":5, "name":"Produto 6", "price":4.50, "image":"https://placehold.co/150"},
+  ]
+
   const [item, setItem] = useState('');
-  const [quantity, setQuantity] = useState(0)
   const [list, setList] = useState([]);
   const [id, setId] = useState(0);
   const [msg, setMsg] = useState("");
   const [totalQuantity, setTotalQuantity] = useState(0)
   const [visibleCart, setVisibleCart] = useState(false)
+  const [filterProducts, setFilterProducts] = useState([])
 
   function handleChangeItem(e){
     setItem(e.target.value)
+    e.target.value!==""?setFilterProducts(produtos.filter((item)=>item.name.includes(e.target.value))):setFilterProducts([])
   }
 
-  function handleChangeQuantity(e){
-    setQuantity(e.target.value)
-  }
-
-  function handleClick(){
-    if(item !== ""){
-      setMsg("")
-      setList([...list, {"id": id, "name":item, "quantity":quantity}])
-      setId(id+1)
-      setItem("")
-      setQuantity(0)
-      setTotalQuantity(totalQuantity + parseInt(quantity))
-    }else{
-      setMsg("Atenção! O valor do item não pode ser vazio")
-    }
+  function handleAddProduct(desc, price, quantity){
+    setId(id+1)
+    setList([...list, {"id": id, "name":desc, "price":price,"quantity":quantity}])
+    setTotalQuantity(totalQuantity + parseInt(quantity))
+    setMsg("")
   }
 
   function handleDelete(id){
@@ -45,19 +44,21 @@ function App() {
     setList(list.filter(item => item.id !== id));
   }
 
+  function handleCart(){
+    setVisibleCart(!visibleCart)
+  }
+
   return (
     <div className='container'>
       <Message msg={msg} status="error"/>
       <div className='add_container'>
         <div className='inputs'>  
-          <InputText title="Item" name="name" type="text" placeholder="Informe um item" value={item ? item : ''} onChange={handleChangeItem}/>
-          <InputText title="Quantidade" name="quantity" type="number" placeholder="Digite a quantidade" value={quantity ? quantity : ''} onChange={handleChangeQuantity}/>
+          <InputText title="Pesquisar" name="name" type="text" placeholder="Pesquise um item" value={item ? item : ''} onChange={handleChangeItem}/>
         </div>
-        <Button text="Adicionar" onClick={handleClick}/>
       </div>
-      <List list={list} handleDelete={handleDelete}/>
-      <Cart list={list} handleDelete={handleDelete}/>
-      <FloatButton icon={<MdShoppingCart/>} quantity={totalQuantity}/>
+      <List list={filterProducts.length > 0 ? filterProducts : produtos} handleAdd={handleAddProduct}/>
+      {visibleCart && <Cart list={list} handleDelete={handleDelete}/>}
+      <FloatButton icon={<MdShoppingCart/>} quantity={totalQuantity} onClick={handleCart} status={visibleCart}/>
     </div>
   );
 }

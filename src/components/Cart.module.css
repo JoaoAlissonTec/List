@@ -1,6 +1,11 @@
 .cart_container{
-    position: absolute;
+    position: fixed;
+    padding: 1em;
     width: 30%;
     height: 50%;
-    right: 40px;
+    right: 20px;
+    bottom: 80px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: auto;
 }

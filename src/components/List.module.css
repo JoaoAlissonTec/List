@@ -5,6 +5,14 @@
     padding: 1em;
 }
 
+.list_container ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+}
+
 .list_container p{
     color: #bbb;
 }

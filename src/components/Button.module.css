@@ -9,4 +9,9 @@
     color: white;
     border: none;
     border-radius: 5px;
+    display: flex;
+}
+
+.button_container button svg{
+    margin-left: 10px;
 }
