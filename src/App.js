@@ -10,12 +10,14 @@ import List from './components/List';
 function App() {
 
   const produtos = [
-    {"id":0, "name":"Produto 1", "price":14.99, "image":"https://placehold.co/150/7965BF/FFF"},
-    {"id":1, "name":"Produto 2", "price":20.49, "image":"https://placehold.co/150/7965BF/FFF"},
-    {"id":2, "name":"Produto 3", "price":0.99, "image":"https://placehold.co/150/7965BF/FFF"},
-    {"id":3, "name":"Produto 4", "price":4.49, "image":"https://placehold.co/150/7965BF/FFF"},
-    {"id":4, "name":"Produto 5", "price":3.15, "image":"https://placehold.co/150/7965BF/FFF"},
-    {"id":5, "name":"Produto 6", "price":4.50, "image":"https://placehold.co/150/7965BF/FFF"},
+    {"id":0, "name":"Produto 1", "price":14.99, "image":"https://placehold.co/150/7965BF/FFF", "category":"smartphone"},
+    {"id":1, "name":"Produto 2", "price":20.49, "image":"https://placehold.co/150/7965BF/FFF", "category":"smartphone"},
+    {"id":2, "name":"Produto 3", "price":0.99, "image":"https://placehold.co/150/7965BF/FFF", "category":"smartphone"},
+    {"id":3, "name":"Produto 4", "price":4.49, "image":"https://placehold.co/150/7965BF/FFF", "category":"eletrônico"},
+    {"id":4, "name":"Produto 5", "price":3.15, "image":"https://placehold.co/150/7965BF/FFF", "category":"eletrônico"},
+    {"id":5, "name":"Produto 6", "price":4.50, "image":"https://placehold.co/150/7965BF/FFF", "category":"eletrônico"},
+    {"id":6, "name":"Produto 7", "price":2.49, "image":"https://placehold.co/150/7965BF/FFF", "category":"eletrônico"},
+    {"id":7, "name":"Produto 8", "price":49.99, "image":"https://placehold.co/150/7965BF/FFF", "category":"periférico"},
   ]
 
   const [item, setItem] = useState('');
@@ -40,6 +42,8 @@ function App() {
     }
     setTotalQuantity(totalQuantity + parseInt(quantity))
     setMsg("")
+
+    console.log(Object.groupBy(produtos, ({category})=>category))
   }
 
   function handleDelete(id){
@@ -50,6 +54,7 @@ function App() {
 
   function handleCart(){
     setVisibleCart(!visibleCart)
+    console.log(Object.groupBy(produtos, produto => produto.category))
   }
 
   function handleCloseCart(e){

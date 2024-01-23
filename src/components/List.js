@@ -1,15 +1,13 @@
 import styles from './List.module.css'
-import Product from './Product';
+import Section from './Section';
 
 export default function List({list, handleAdd}){
-
+    const obj = Object.groupBy(list, itens=>itens.category)
     return(
         <div className={styles.list_container}>
-            <ul>
-                {list.length > 0 ? list.map((value)=>(
-                    <Product id={value.id} desc={value.name} img={value.image} price={value.price} key={value.id} handleAdd={handleAdd}/>
+                {list.length > 0 ? Object.keys(obj).map((value)=>(
+                    <Section category={value} handleAdd={handleAdd} list={obj[value]}/>
                 )):<p>Não há itens</p>}
-            </ul>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 .container{
   padding: 1.5em;
-  height: 100dvh;
   background-color: #F2F2F2;
+  min-height: 100dvh;
 }
 
 .add_container .inputs{

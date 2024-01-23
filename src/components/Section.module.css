@@ -1,0 +1,19 @@
+.category_container{
+    margin-bottom: 10px;
+}
+
+.category_container p{
+    margin-bottom: 5px;
+}
+
+.category_container p::first-letter{
+    text-transform: uppercase;
+}
+
+.category_container ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+}
