@@ -10,7 +10,7 @@ export default function Product({id, desc, price, img, handleAdd}){
                 <h1>{desc}</h1>
                 <p>{price.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>
                 <div className={styles.product_button}>
-                    <Button text={["Adicionar", <MdShoppingCart/>]} onClick={()=>handleAdd(desc, price, 1)}/>                
+                    <Button text={["Adicionar", <MdShoppingCart/>]} onClick={()=>handleAdd(id, desc, price, 1)}/>                
                 </div>
             </div>
         </div>

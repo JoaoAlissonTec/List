@@ -1,8 +1,11 @@
 .container{
   padding: 1.5em;
   height: 100dvh;
+  background-color: #F2F2F2;
 }
 
 .add_container .inputs{
   display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }

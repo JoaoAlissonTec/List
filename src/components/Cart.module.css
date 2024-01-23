@@ -5,7 +5,24 @@
     height: 50%;
     right: 20px;
     bottom: 80px;
-    background-color: white;
+    background-color: #F2F2F2;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     overflow: auto;
+}
+
+.image{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image h2{
+    color: #7965BF;
+    font-size: 1.2em;
+}
+
+.cart_container img{
+    height: 300px;
 }

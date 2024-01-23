@@ -1,12 +1,12 @@
 .input_container{
     display: flex;
-    width: 50%;
-    flex-direction: column;
+    width: 30%;
     margin-right: 1em;
+    align-items: center;
 }
 
 .input_container label{
-    margin-bottom: .3em;
+    margin-right: .3em;
     color: #bbb;
 }
 
@@ -14,6 +14,8 @@
     width: 100%;
     outline: none;
     padding: .5em;
+    border: 1px solid #242259;
+    background-color: #F2F2F2;
 }
 
 .input_container input[type='number']{

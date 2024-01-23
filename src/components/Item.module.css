@@ -7,12 +7,12 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: .5em;
-    background-color: white;
+    background-color: #F2F2F2;
 }
 
 .item_container h1{
     font-size: 1.4em;
-    color: #1C1F33;
+    color: #242259;
 }
 
 .item_container li{
